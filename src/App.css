@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+html {
+  width: 100% !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+ width: 100%;
+  color: #eaecef;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  padding:30px;
+  background-color: #011627;
+  height: 60px;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainDiv {
+  width: 60vw;
+  height: 90vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border: 1px solid gray;
+  margin: 3px;
+  color: #011627;
+  padding: 1rem;
+}
+.mainDiv img {
+  width: 60%;
+  height: 50%;
+  object-fit: cover;
+}
+.sidenav {
+  width: 14%;
+  background-color: #011627;
+  position: absolute;
+  height: 86vh;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  left: -110%;
+  transition: all 0.4s;
+}
+.sidenav.active {
+  left: 0;
+}
+.main-title {
+  margin-left: 10px;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  list-style-type: none;
+  margin: 10px;
+}
+ul li a {
+  color: #eaecef;
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+ul li a:hover,
+ul li a:active {
+  background-color: #172b4d;
+}
+header svg {
+  font-size: 40px;
+  margin-left: 10px;
+  color: #f8f8ff;
+}
+.main {
+  display: flex;
+  width: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #c9c9c9;
+  margin-left: 3%;
 }
-
-.App-link {
-  color: #61dafb;
+.giHam {
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.giHam:active {
+  transform: rotate(320deg);
+}
+@media screen and (max-width: 400px) {
+  header {
+    padding:20px;
+    background-color: #011627;
+    height: 30px;
+    width: 100%;
+   
   }
-  to {
-    transform: rotate(360deg);
+ 
+  .sidenav {
+    width: 100%;
+    background-color: #011627;
+    position: absolute;
+    height: 30vh;
+    outline: none;
+    border: none;
+    opacity: 1;
+    padding: 0 30px;
+    left: -120%;
+    transition: all 0.4s;
+  }
+
+  header svg {
+    font-size: 30px;
+  }
+  ul li a {
+    color: #eaecef;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 6px 8px;
+    border:none;
+  }
+
+  .mainDiv {
+    width:80%;
+    margin: 0 auto;
+    font-size: 15px;
+    
+  }
+  .mainDiv img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  header {
+    padding:20px;
+    background-color: #011627;
+    height: 30px;
+    width: 100%;
+  }
+  .sidenav {
+    width: 100%;
+    background-color: #011627;
+    position: absolute;
+    min-height: 100vh;
+    opacity: 0.9;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    left: -120%;
+    transition: all 0.4s;
+  }
+  header svg {
+    font-size: 28px;
+    margin-left: 10px;
+  }
+  ul li a {
+    color: #eaecef;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    width:50%;
+    padding: 6px 8px;
+  }
+  .mainDiv {
+    width:80%;
+    margin: 0 auto;
+    font-size: 15px;
+    margin: 1rem;
+    
+  }
+  .mainDiv img {
+    width: 100%;
   }
 }
