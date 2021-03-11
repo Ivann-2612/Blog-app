@@ -23,8 +23,7 @@ function App() {
            <Route path='/'      exact={true} component = {NewsList} />
            <Route path='/about' exact={true} component = {About} />
         </div>
-    </Router>
-        
+    </Router>        
     </>
   );
 }

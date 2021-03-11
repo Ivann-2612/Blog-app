@@ -1,12 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { getSerbiaNews } from './service'
-import NewsItem from './NewsItem'
 
 
 const NewsList = () => {
     const [articles,setArticles] = useState([])
-    const [search, setSearch] = useState('')
+
 
     useEffect(() => {
         getSerbiaNews().then(res => {
