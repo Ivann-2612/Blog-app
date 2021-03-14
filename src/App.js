@@ -4,8 +4,7 @@ import './App.css'
 import Navbar from './Navbar'
 import NewsList from './pages/NewsList'
 import About from './pages/About'
-import { GiHamburgerMenu } from 'react-icons/gi'
-
+import { CgMenuLeftAlt } from 'react-icons/cg'
 
 
  
@@ -16,7 +15,8 @@ function App() {
     <>
     <Router>
         <header>
-          <GiHamburgerMenu className='giHam' onClick={() => {setShowNav(!showNav)}} />
+          <CgMenuLeftAlt className='giHam' onClick={() => {setShowNav(!showNav)}} />
+          <p>BLOG<span>man</span></p>
         </header>
          <Navbar show={showNav} />
         <div className='main'>

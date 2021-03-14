@@ -1,31 +1,29 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getSerbiaNews } from './service'
+import { getAllPosts } from './service'
 
 
 const NewsList = () => {
     const [articles,setArticles] = useState([])
 
-
     useEffect(() => {
-        getSerbiaNews().then(res => {
-           console.log(res.data)
-            setArticles(res.data.articles)
+        getAllPosts().then(res => {
+            console.log(res.data)
+            setArticles(res.data)
         })
-      
     },[])
 
     return (
         <div>
-            <h5 className='main-title'>Serbian News</h5>
+            <h5 className='main-title'>New Posts</h5>
             {
                articles.map(article => {
                    return(
-                       <div key={article.urlToImage} className='mainDiv'>
-                           <h5>{article.author}</h5>
-                           <img src={article.urlToImage} alt={'New'} />
-                           <p><a href={article.url} >{article.title}</a></p>
+                       <div key={article.id} className='mainDiv'>
+                           <h5>{article.title}</h5>
+                           <img src={article.image} alt={'New'} />
                            <p>{article.description}</p>
+                           <p>{article.date}</p>
                        </div>
                    )
                })  

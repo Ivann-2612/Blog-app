@@ -1,40 +1,79 @@
+:root {
+  --bg-black: #090909;
+  --white: #f8f8ff;
+  --orange: #FB5607;
+}
+
 html, body {
   max-width: 100% !important;
   box-sizing: border-box;
   height: 100%;
   color: #eaecef;
   margin: 0;
-  background-color: #1E2227;
+  background-color: var(--bg-black);
   padding: 0;
 }
-
+body {
+  overflow-x: hidden;
+}
 header {
   padding:30px;
-  background-color: #1E2227;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-black);
   height: 60px;
   width: 100%;
+  overflow: hidden;
+}
+header p {
+  margin-right: 80px;
+  color: var(--white);
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+header p::after {
+  content:'________';
+  margin-left: -80px;
+  color: #353535;
+}
+header span {
+  color: #FB5607;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border:1px solid #373737;
+}
+body::-webkit-scrollbar-thumb {
+ background-color: #FB5607;
+ max-height: 50%;
+ height: 9.81%;
 }
 .mainDiv {
-  width: 60vw;
-  height: 90vh;
+  max-width: 60vw;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
-  margin: 3px;
+  margin: 20px;
   background-color: #101010;
   color: lightgray;
   padding: 1rem;
+  box-shadow:  0px 2px 5px rgba(98,34,3,0.5);
 }
 .mainDiv img {
-  width: 60%;
+  width: 80%;
   height: 50%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .sidenav {
   width: 14%;
-  background-color: #1E2227;
+  background-color: #141d26;
   position: fixed;
   height: 86vh;
-  box-shadow: 1px 1px 8px #f8f8ff;
+  box-shadow: 1px 1px 1px 1px #f8f8ff;
   outline: none;
   padding: 0 15px;
   left: -110%;
@@ -43,10 +82,15 @@ header {
 .sidenav.active {
   left: 0;
 }
+.sidenav a {
+  color: var(--orange);
+  letter-spacing: 1.5px;
+}
 .sidenav svg {
  display: flex;
  justify-content: space-between;
  padding: 10px;
+ align-items: center;
 }
 .sidenav svg:hover {
   background-color: lightgray;
@@ -72,6 +116,7 @@ ul li a {
   display: block;
   border-radius: 6px;
   padding: 10px 15px;
+  
 }
 ul li a:hover,
 ul li a:active {
@@ -80,7 +125,7 @@ ul li a:active {
 header svg {
   font-size: 40px;
   margin-left: 10px;
-  color: #f8f8ff;
+  color: var(--white);
 }
 .main {
   display: flex;
@@ -93,7 +138,7 @@ header svg {
 }
 .giHam {
   cursor: pointer;
-  border-radius: 50%;
+  font-size: 40px;
 }
 .giHam:active {
   transform: rotate(320deg);
@@ -101,14 +146,13 @@ header svg {
 @media screen and (max-width: 400px) {
   header {
     padding:20px;
-    background-color: #1E2227;
+    background-color: var(--bg-black);
     height: 30px;
     width: 100%;
-   
   }
   .sidenav {
     width: 100%;
-    background-color: #1E2227;
+    background-color: var(--bg-black);
     position: absolute;
     height: 30vh;
     outline: none;
@@ -120,7 +164,7 @@ header svg {
   }
   header svg {
     font-size: 24px;
-    color: #f8f8ff;
+    color: var(--white);
   }
   ul li a {
     color: #eaecef;
@@ -142,24 +186,52 @@ header svg {
   }
 }
 @media screen and (max-width: 800px) {
+ 
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding:20px;
-    background-color: #1E2227;
+    background-color: var(--bg-black);
     height: 30px;
     width: 100%;
+   
+  }
+  header p {
+    margin-right: 40px;
+    color: var(--white);
+    font-size: 1.5em;
+    font-family: sans-serif;
   }
   .sidenav {
     width: 100%;
-    background-color: #1E2227;
+    background-color: var(--bg-black);
     position: absolute;
-    min-height: 100vh;
+    height: 100vh;
+    /*border-left: 10px solid #373737;*/
     box-shadow: none;
     outline: none;
-    border: none;
-    padding: 0 30px;
-    left: -120%;
-    transition: all 0.4s;
+    display: flex;
+    border-top-right-radius: 40%;
+    justify-content: space-evenly;
+    border-right: 1.1em solid var(--orange);
+    /*border-top: 0.2px solid #c9a594;*/
+    left: -125%;
+    transition: all 0.5s;
   }
+  .sidenav ul {
+    width: 40%;
+  }
+  .sidenav a:hover {
+    background-color: #f8f8ff;
+    transition: 0.5s all;
+  }
+  /*.sidenav img {
+    width: 170px;
+    height: 180px;
+    opacity: 0.3;
+    margin-top: 20%;
+  }*/
   header svg {
     font-size: 28px;
     margin-left: 10px;
@@ -169,14 +241,16 @@ header svg {
     text-decoration: none;
     font-size: 18px;
     display: block;
-    width:50%;
+    width:80%;
     padding: 6px 8px;
   }
+ 
   .mainDiv {
     width:80%;
     margin: 0 auto;
     font-size: 15px;
     margin: 1rem;
+    border-radius: 5px;
     
   }
   .mainDiv img {
