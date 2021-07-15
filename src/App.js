@@ -1,31 +1,35 @@
-import { useState } from 'react'
-import { BrowserRouter as Router,Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './Navbar'
 import NewsList from './pages/NewsList'
-import About from './pages/About'
-import { CgMenuLeftAlt } from 'react-icons/cg'
+import Portfolio from './pages/Portfolio'
+import WelcomePage from './pages/WelcomePage'
+import { BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
 
 
- 
-function App() {
-  const [showNav, setShowNav] = useState(false)
+
+
+const App = () => {
   
   return (
     <>
     <Router>
-        <header>
-          <CgMenuLeftAlt className='giHam' onClick={() => {setShowNav(!showNav)}} />
-          <p>BLOG<span>man</span></p>
-        </header>
-         <Navbar show={showNav} />
-        <div className='main'>
-           <Route path='/'      exact={true} component = {NewsList} />
-           <Route path='/about' exact={true} component = {About} />
-        </div>
-    </Router>        
+    <div className='links'>
+         <Link className='link1' to="/">Blogs</Link>
+         <Link className='link2'  to='/portfolio'>Portfolio</Link>
+    </div>
+       
+    <div className='main'>
+      <div className='wrapper'>
+      <Switch>
+        <Route exact path="/" component={NewsList} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route render={() => <WelcomePage />} />
+      </Switch>
+      </div>
+    </div>
+  </Router>
     </>
   );
 }
 
 export default App;
+      
