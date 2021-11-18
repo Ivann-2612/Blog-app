@@ -6,12 +6,12 @@ import { CgMenuLeftAlt } from 'react-icons/cg'
 
 const NewsList = () => {
     const [articles,setArticles] = useState([])
-    const [visible,setVisible] = useState(5)
+    const [visible,setVisible] = useState(4)
     const [search,setSearch] = useState('')
     const [showNav, setShowNav] = useState(true)
 
     const showMoreBlogs = () => {
-        setVisible(prev => prev + 5)
+        setVisible(prev => prev + 2)
     }
     
     useEffect(() => {
@@ -21,12 +21,8 @@ const NewsList = () => {
         })
     },[])
     
-
-
     return (
         <>
-   
-        
         <div>
             <input className='input-search' type='search' placeholder='Search title...' onChange={(e) => {setSearch(e.target.value)}} />
             <Sidebar show={showNav} />
@@ -35,8 +31,9 @@ const NewsList = () => {
           <p>BLOG<span>man</span></p>
         </header>
             <h5 className='main-title'>New Blogs</h5>
+            <div className='content'>
             {
-               articles.filter((value) => {
+               articles?.filter((value) => {
                    if(search === '') {
                       return value
                    }else if (value.title.toLowerCase().includes(search.toLowerCase())) {
@@ -47,15 +44,17 @@ const NewsList = () => {
                                
                }).slice(0,visible).map(article => {
                    return(
-                       <div key={article.id} className='mainDiv'>
-                           <h5>{article.title}</h5>
-                           <img src={article.image} alt={'New'} />
-                           <p>{article.description}</p>
-                           <p style={{color:'#fecc2c'}}>{article.date}</p>
+                       <div key={article?.id} className='mainDiv'>
+                           <h5>{article?.title}</h5>
+                           <img src={article?.image} alt={'New'} />
+                           <p>{article?.description}</p>
+                           <span style={{color:'#fecc2c'}}>{article?.date}</span>
                        </div>
                    )
                })  
             }
+            </div>
+            
             <button className='load-more' onClick={showMoreBlogs}>Load more...</button>
         </div>
         

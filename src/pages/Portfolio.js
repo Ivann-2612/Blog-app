@@ -75,7 +75,7 @@ const Portfolio = () => {
                 <p>Hair Salon</p>
                 <p className='title'>Html,Css,Javascript</p>
                 <p className='demo'>Demo: <a href='https://ivann-2612.github.io/Responsive-website-one/'>Hair salon app</a></p>
-                <span>New,New,New Website...</span>
+               
             </div>
         </div>
         </div>
