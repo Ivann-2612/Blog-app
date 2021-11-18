@@ -9,7 +9,7 @@ width: 100% !important;
 height: 100% !important;
 box-sizing: border-box;
 color: #eaecef;
-background-color: #121212;
+background-color: #020202;
 }
 body {
 overflow-x: hidden;
@@ -278,7 +278,7 @@ ul li a:active {
   justify-content: center;
 }
 .copyright  {
-  padding-top: 40px;
+  padding-top: 200px;
 }
 @media only screen and (min-width: 100px) and ( max-width:300px) {
   body {
@@ -343,6 +343,9 @@ ul li a:active {
    margin: 0 auto;
  }
 .links {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
   justify-content: center;
   margin-bottom: 25px;
 }
@@ -350,6 +353,9 @@ ul li a:active {
    font-size: 17px;
    justify-content: center;
  }
+ .wrapper {
+  margin-top: 120px;
+}
   header {
     display: flex;
     margin-top: 10px;
@@ -462,7 +468,7 @@ ul li a:active {
     width:95%;
     text-align: center;
     height: 60%;
-    margin: 0 auto;
+    margin: 25px auto;
     font-size: 15px;
     border-radius: 5px;
   }
@@ -485,8 +491,9 @@ ul li a:active {
   .input-search {
     position: absolute;
     top: 3%;
+    opacity: 0.85;
     /* margin-top: 60px !important; */
-    left: 24.7%;
+    left: 26%;
     height: 30px !important;
     margin-top: 25px;
     border: none;
@@ -606,9 +613,9 @@ ul li a:active {
     text-align: center;
     color: rgb(117, 198, 201);
   }
-  .welcome-allSvg {
+  /* .welcome-allSvg {
     margin-left: 12%;
-  }
+  } */
   .welcome-page svg {
    width: 1.5em;
    height: 1.5em;
@@ -744,7 +751,7 @@ ul li a:active {
     font-size: 27px;
     font-weight: 600;
     color: rgb(117, 198, 201);
-    padding: 10px;
+    padding: 30px;
   }
   /* .welcome-allSvg {
     margin-left: 8%;
@@ -754,7 +761,6 @@ ul li a:active {
    height: 2.1em;
    margin-right: 20px;
    margin-top: 35px;
-   margin-left: 40px;
    padding-left: 5px;
   }
   .welcome-page .apple {
@@ -858,8 +864,9 @@ width: 100%;
 height: 84vh;
 margin: 0 auto;
 color: var(--white) i!important;
-margin-left: -1px;
+margin-left: -5px;
 line-height: 1.5;
+border: 1px solid rgba(117,198,201,0.1);
 padding: 5px 5px;
 background-image: radial-gradient(#206953 1px, #000000 1px);
 background-size: 20px 20px;
