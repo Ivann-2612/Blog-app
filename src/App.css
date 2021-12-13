@@ -39,6 +39,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: flex-end;
   margin-right: -4px;
+  z-index: 5;
  }
 .links a {
   margin-top: 3px;

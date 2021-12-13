@@ -33,7 +33,7 @@ const NewsList = () => {
             <h5 className='main-title'>New Blogs</h5>
             <div className='content'>
             {
-               articles?.filter((value) => {
+             articles && articles?.filter((value) => {
                    if(search === '') {
                       return value
                    }else if (value.title.toLowerCase().includes(search.toLowerCase())) {
