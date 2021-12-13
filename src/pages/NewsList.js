@@ -6,7 +6,7 @@ import { CgMenuLeftAlt } from 'react-icons/cg'
 
 const NewsList = () => {
     const [articles,setArticles] = useState([])
-    const [visible,setVisible] = useState(4)
+    const [visible,setVisible] = useState(2)
     const [search,setSearch] = useState('')
     const [showNav, setShowNav] = useState(true)
 
@@ -16,8 +16,8 @@ const NewsList = () => {
     
     useEffect(() => {
         getAllPosts().then(res => {
-           // console.log(res.data)
-            setArticles(res.data)
+           //console.log(res)
+            setArticles(res)
         })
     },[])
     

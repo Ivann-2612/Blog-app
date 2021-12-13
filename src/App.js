@@ -2,7 +2,7 @@ import './App.css'
 import NewsList from './pages/NewsList'
 import Portfolio from './pages/Portfolio'
 import WelcomePage from './pages/WelcomePage'
-import { BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 
 
 
