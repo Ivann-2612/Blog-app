@@ -6,7 +6,7 @@ import { CgMenuLeftAlt } from 'react-icons/cg'
 
 const NewsList = () => {
     const [articles,setArticles] = useState([])
-    const [visible,setVisible] = useState(2)
+    const [visible,setVisible] = useState(6)
     const [search,setSearch] = useState('')
     const [showNav, setShowNav] = useState(true)
 
